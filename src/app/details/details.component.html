@@ -1,0 +1,29 @@
+
+<ul>
+        <li>
+            <div class ="card" style="width: 370px; height: 900px; color: darkred">
+                <img class = "card-image-top" src ={{pokemonSelected.art_url}}>
+                <div class ="card-body">
+                    <h1 class="card-title">
+                        {{pokemonSelected.name}}
+                    </h1>
+                    <h4>
+                        {{pokemonSelected.pkdx_id}}
+                    </h4>
+                    <h4>
+                        {{pokemonSelected.description}}
+                    </h4>
+                    <div *ngIf="pokemonSelected.evolutions.length > 0">
+                        <div *ngFor="let evolution of pokemonSelected.evolutions">
+                            <h3>Evolution Level: {{evolution.level}}</h3>
+                            <h3>Evolution Method: {{evolution.method}}</h3>
+                            <h3>Evolution Level Up: {{evolution.level_up}}</h3>
+                            <h3>Evolute to: {{evolution.to}}</h3>
+                            <img src="{{ObtenerImagenEvolucion(evolution.to)}}" width="100px" height="100px" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    
+</ul>

@@ -1,0 +1,29 @@
+<div>
+    <h1 style="text-align: center">
+        Pokedex
+    </h1>
+    <p style="TEXT-ALIGN: CENTER">BY MANUEL, MARIO Y JUAN</p>
+</div>
+<div>
+    <ul style="list-style-type:none">
+    <li *ngFor ="let pokemon of pokemons"  
+        [class.selected]="pokemon.name===selectedPokemon">
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-outline-danger" (click) = goDetail(pokemon) >
+                <div class ="card" style="width: 370px; height: 570px; color: darkred ">
+                    <img class = "card-image-top" src ={{pokemon.art_url}} alt="pokemon">
+                    <div class ="card-body">
+                        <h1 class="card-title">
+                            {{pokemon.name}}
+                        </h1>
+                        <h3 class="card-text">
+                            Pokedex Number: {{pokemon.pkdx_id}}
+                        </h3>
+                    </div>
+
+                </div>
+            </button>
+        </div> 
+    </li>
+    </ul>
+</div>
